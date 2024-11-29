@@ -1,0 +1,59 @@
+{% extends 'source/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/allcafes.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,
+wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+    </a>
+  </nav>
+    <div class="container">
+        <!-- <div class="data"> -->
+            <div class="section">
+                <table class="table table-hover">
+                    <thead>
+                        <th>Cafe Name</th>
+                        <th>Cafe Location</th>
+                        <th>Open</th>
+                        <th>Close</th>
+                        <th>Coffee</th>
+                        <th>Wifi</th>
+                        <th>PowerSockets</th>
+                    </thead>
+                    {% for i in cafe %}
+                        <tbody>
+                            <tr>
+                                <td>{{i.name}}</td>
+                                <td><a href="{{i.location}}">{{i.location}}</a></td>
+                                <td>{{i.open}}</td>
+                                <td>{{i.close}}</td>                    
+                                <td title="rating">{{i.coffee}}</td>                    
+                                <td title="rating">{{i.wifi}}</td>
+                                <td id="td1">{{i.powersockets}}</td>
+                            </tr> 
+                        </tbody>
+                    {% endfor %}                
+                </table> 
+            </div>
+        <!-- </div> -->
+        <br>
+        <div class="para">
+            <p>Share your favorite hidden cafés! Contribute to our collection and help fellow explorers discover unique spots with fast Wi-Fi and great vibes.</p>
+        </div>
+        <div class="btn">
+            <button><a href="{% url 'addcafe' %}">Add Cafes</a></button>
+            <br>
+            <br>
+            <button><a href="{% url 'home' %}">Go back</a></button>
+        </div>
+    </div>
+    
+{% endblock %}

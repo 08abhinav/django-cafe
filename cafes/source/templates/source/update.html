@@ -1,0 +1,15 @@
+{% extends 'source/base.html' %}
+
+{% block title %}Edit{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <hr>
+    <button><a href="{% url 'cafe' %}"> Cancel</a></button>
+{% endblock %}

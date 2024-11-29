@@ -1,0 +1,17 @@
+{% extends 'source/base.html'%}
+
+{% block title %}Add{% endblock %}
+
+{% block content %}
+    <h1>Add Cafes</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Add</button>
+    </form>
+    <hr>
+    <button><a href="{% url 'cafe'%}">Go Back</a></button>
+    <br><br>
+    <button><a href="{% url 'home' %}">Go Home</a></button>
+{% endblock %}

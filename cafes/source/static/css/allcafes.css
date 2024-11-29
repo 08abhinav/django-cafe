@@ -1,0 +1,48 @@
+body{
+    font-family: "Playfair Display", serif;
+    background-color: #343131;
+    color: #FFEEAD;
+}
+
+/* .container .section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5em;
+} */
+.section table{
+    margin-top: 2.5em;
+   color: #FFEEAD;
+   border-top: 2px solid #7D5A50;
+}
+th{
+    border-bottom: 2px solid #7D5A50;
+    text-align: left;
+}
+td{
+    text-align: left;
+    border-bottom: 2px solid #7D5A50;
+}
+
+#td1{
+    text-align: center;
+}
+
+th,td{
+    padding: 8px;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .section table{
+        width: auto;
+    }
+    
+}
